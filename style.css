@@ -1,22 +1,38 @@
 #movie-result {
-  background: rgb(244, 98, 181);
-  border: 5px solid black;
+  background: rgb(174, 218, 217);
+  border: 5px solid rgb(252, 252, 250);
   font-size: 24px;
-  height: 160px;
+  min-height: 100px;
   margin-top: 10px;
   margin-bottom: 20px;
 }
 
 #book-result {
-  background: rgb(196, 159, 255);
-  border: 5px solid black;
+  background: rgb(174, 218, 217);
+  border: 5px solid rgb(252, 252, 250);
   font-size: 24px;
-  height: 160px;
+  min-height: 100px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+#animal-result {
+  background: rgb(174,218,217);
+  border: 5px solid rgb(252,252,250);
+  font-size: 24px;
+  min-height: 100px;
   margin-top: 10px;
   margin-bottom: 20px;
 }
 
 hr {
   height: 5px;
-  background-color: black;
+  background-color: rgb(252, 252, 250);
+}
+html {
+  background-color: rgb(237, 236, 163)
+}
+
+h1 {
+  color: (240, 186, 237);
 }

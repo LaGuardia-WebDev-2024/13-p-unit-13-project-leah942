@@ -21,37 +21,76 @@ Select ONE Additional Feature to Add
     <link href="style.css" rel="stylesheet" type="text/css" />
   </head>
   <body>
-    <h1>Quiz About [Me]</h1>
+    <h1>How much do you know about Leah?</h1>
     <hr />
     <!-- Movie Question -->
     <form id="movie-form">
       <label>
-        🎥 What is my favorite movie?
+        🎥 What is Leah's favorite movie?
         <select id="movie-answer">
-          <option value="movie1">movie 1</option>
-          <option value="movie2">movie 2</option>
-          <option value="movie3">movie 3</option>
-          <option value="movie4">movie 4</option>
+          <option value="movie1">Mary Poppins</option>
+          <option value="movie2">Minions</option>
+          <option value="movie3">Harry Potter</option>
+          <option value="movie4">Hugo</option>
         </select>
       </label>
       <button type="submit">Check Movie Answer</button>
     </form>
-    <div id="movie-result"></div>
+    <div id="movie-result">
+      <p id="movie-text"></p>
+      <img
+        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRVZBliXBm2j8IJAbMW1Bp_MnPvzgU4cQFKHg&s"
+        width="100"
+        id="minions"
+        style="display: none"
+      />
+    </div>
     <hr />
     <!-- Book Question -->
     <form id="book-form">
       <label>
-        📖 What is my favorite book?
+        📖 What is Leah's favorite book?
         <select id="book-answer">
-          <option value="book1">book 1</option>
-          <option value="book2">book 2</option>
-          <option value="book3">book 3</option>
-          <option value="book4">book 4</option>
+          <option value="book1">Hugo</option>
+          <option value="book2">Animal Farm</option>
+          <option value="book3">They Both Die in the End</option>
+          <option value="book4">Wonder</option>
         </select>
       </label>
       <button type="submit">Check Book Answer</button>
     </form>
-    <div id="book-result"></div>
+    <div id="book-result">
+      <p id="book-text"></p>
+      <img
+        src="https://upload.wikimedia.org/wikipedia/en/c/ce/The_Invention_of_Hugo_Cabret.jpg"
+        width="100"
+        id="hugo"
+        style="display: none"
+      />
+    </div>
+    <!-- Animal Question -->
+    <form id="animal-form">
+      <label>
+        What is Leah's favorite animal?
+        <select id="animal-answer">
+          <option value="animal1">Panda</option>
+          <option value="animal2">Rabbit</option>
+          <option value="animal3">Bunny</option>
+          <option value="animal4">Cat</option>
+        </select>
+      </label>
+      <button type="submit">Check Animal Answer</button>
+    </form>
+    <div id="animal-result">
+      <p id="animal-text"></p>
+      <img
+        src="https://res.cloudinary.com/jerrick/image/upload/d_642250b563292b35f27461a7.png,f_jpg,fl_progressive,q_auto,w_1024/finbpjpirbespgfpul19.jpg"
+        width="100"
+        id="bunny"
+        style="display: none"
+      />
+    </div>
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
     <script>
       //Movie Question jQuery Code
@@ -61,10 +100,13 @@ Select ONE Additional Feature to Add
         var $answer = $("#movie-answer");
         var answer = $answer.val();
 
-        if (answer === "movie1") {
-          $("#movie-result").text("YESSSS!");
+        if (answer === "movie2") {
+          $("#movie-text").hide();
+          $("#movie-text").text("yurrrr");
+          $("#movie-text").slideDown(3000);
+          $("#minions").slideDown(3000);
         } else {
-          $("#movie-result").text("Try Again!");
+          $("#movie-text").text("no.");
         }
       });
 
@@ -76,9 +118,30 @@ Select ONE Additional Feature to Add
         var answer = $answer.val();
 
         if (answer === "book1") {
-          $("#book-result").text("YESSSS!");
+          $("#book-text").hide();
+          $("#book-text").text("yas");
+          $("#book-text").slideDown(3000);
+          $("#hugo").slideDown(3000);
         } else {
-          $("#book-result").text("Try Again!");
+          $("#book-text").text("boo. no.");
+        }
+      });
+
+      //Animal Question jQuery Code
+      $("#animal-form").on("submit", function (event) {
+        event.preventDefault();
+
+        var $answer = $("#animal-answer");
+        var answer = $answer.val();
+
+        if (answer === "animal3") {
+          $("#animal-text").hide();
+          $("#animal-text").text("yes!");
+          $("#animal-text").slideDown(3000);
+          $("#bunny").slideDown(3000);
+          
+        } else {
+          $("#animal-text").text("nope.");
         }
       });
     </script>
